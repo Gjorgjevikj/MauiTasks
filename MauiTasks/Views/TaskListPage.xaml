@@ -38,7 +38,7 @@
                 WidthRequest="50"
                 BackgroundColor="IndianRed"
                 TextColor="White"
-                IsVisible="{OnPlatform iOS=False, Android=False, WinUI=True, MacCatalyst=True}"
+                IsVisible="{OnPlatform iOS=False, Android=False, WinUI=True, MacCatalyst=False}"
                 />
         
         <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
