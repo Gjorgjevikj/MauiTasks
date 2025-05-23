@@ -27,8 +27,17 @@ namespace MauiTasks.ViewModels
         public ICommand LoadTasksCommand { get; }
         public ICommand ItemTappedCommand { get; } // For double-tap edit on desktop
 
+        public ICommand DeleteSelectedTaskCommand { get; }
         public TaskListViewModel()
         {
+            DeleteSelectedTaskCommand = new RelayCommand(async () =>
+            {
+                if (SelectedTask != null)
+                {
+                    await DeleteTask(SelectedTask);
+                }
+            });
+
             AddTaskCommand = new RelayCommand(async () => await GoToTaskForm(null));
             EditTaskCommand = new RelayCommand(async (taskVM) =>
             {

@@ -16,7 +16,7 @@
                 FontSize="Large"
                 FontAttributes="Bold"
                 Command="{Binding AddTaskCommand}" 
-                HorizontalOptions="End" 
+                HorizontalOptions="End"
                 VerticalOptions="Center"
                 Margin="0,10,20,10"
                 CornerRadius="25"
@@ -24,7 +24,7 @@
                 WidthRequest="50"
                 BackgroundColor="DodgerBlue"
                 TextColor="White"/>
-        <!--
+        
         <Button Grid.Row="0" Grid.Column="1"
                 Text="-" 
                 FontSize="Large"
@@ -37,8 +37,10 @@
                 HeightRequest="50"
                 WidthRequest="50"
                 BackgroundColor="IndianRed"
-                TextColor="White"/>
-        -->
+                TextColor="White"
+                IsVisible="{OnPlatform iOS=False, Android=False, WinUI=True, MacCatalyst=True}"
+                />
+        
         <CollectionView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                         ItemsSource="{Binding Tasks}"
                         SelectionMode="Single"
